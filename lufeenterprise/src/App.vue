@@ -1,37 +1,46 @@
 <template>
-  <div class="img-fundo">
-    <div class="corpo">
-    <menu-navegacao :rotas="routes"></menu-navegacao>
-    <router-view></router-view>
-    <img src="./assets/logo.png">
-    <h1></h1>
-    <h2>Essential Links</h2>
-    
-    
+    <div>
+      <header>
+        <BarraNavegacao :rotas="routes"></BarraNavegacao>
+      </header>
+      <!-- <div class="banner"> -->
+      <transition name="pagina" mode="out-in">
+        <router-view></router-view>
+      </transition>
+      <!-- </div> -->
     </div>
-  </div>
 </template>
 
 <script>
 
-import Menu from '../src/components/shared/menu/Menu.vue';
+import BarraNavegacao from '../src/components/shared/BarraNavegacao/BarraNavegacao.vue';
 import {routes} from '../src/routes.js'
 
 export default {
   
   components:{
-    'menu-navegacao': Menu
+    BarraNavegacao
   },
 
   data () {
     return {
-      routes: routes
+      routes: routes.filter(route => route.menu)/** "menu" é o nome dado em routes.js quando a rota for visivel(true) ou não(false) na barra de navegação */
     }
   }
 }
 </script>
 
 <style>
+
+html, body
+{
+    height:100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -40,16 +49,19 @@ export default {
   color: #2c3e50;
 }
 
-h1, h2 {
-  font-weight: normal;
+
+
+.pagina-enter, .pagina-leave-to{
+    opacity: 0%;
 }
 
-.img-fundo{
-    background: url('assets/banner-website.jpg') no-repeat;
-    background-size: cover;
-    display: block;
-    min-width: 970px;
-    
-  
+.pagina-enter-active, .pagina-leave-active{
+    transition: opacity 0.15s;
 }
+
+li{
+  list-style: none;
+}
+
+
 </style>

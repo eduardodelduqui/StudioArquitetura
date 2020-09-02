@@ -1,8 +1,6 @@
 <template>
     <div>
-        
-        
-
+        <b-img :src="url" class="card-img" :alt="titulo" fluid></b-img>
     </div>
 
     
@@ -14,6 +12,12 @@
 
 export default {
 
+    props: ['url', 'titulo'],
+
+
+    methods:{
+    
+    }
     
     
 }
@@ -23,7 +27,12 @@ export default {
 
 
 
-<style>
+<style scoped>
+
+.card-img{
+    width:100%;
+}
+
 
 
 
