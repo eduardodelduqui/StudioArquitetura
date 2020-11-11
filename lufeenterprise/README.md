@@ -15,4 +15,8 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Projeto em criação utilizando VueJS com o propósito estritamente educacional. Todos os recursos presentes foram criados de modo a obter conhecimento e experiência em HTML, CSS, Javascript, protocolo HTTP, padrão REST e framework VueJS.
+
+StudioArquitetura é um site fictício de um estúdio de arquitetura. O site apresenta
+
+<img src="https://i.ibb.co/zmvbkpG/Studio-Arquitetura.png" width="30%"></img><img src="https://i.ibb.co/PCWZnF6/Studio-Arquitetura-Projetos.png" width="30%"></img><img src="https://i.ibb.co/gzPqJYs/Studio-Arquitetura-Contato.png" width="30%"></img>

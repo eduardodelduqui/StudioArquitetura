@@ -4,9 +4,9 @@
             <div class="endereco">
                 <h5>StudioArquitetura</h5>
                 <p>Rua Nomequalquer de Rua, 3185, Trindade<br>
-                Florianópolis - SC
-                Tel: (48) 2005-1819<br>
-                Cel: (48) 99999-8888<br>
+                Rio de Janeiro - RJ
+                Tel: (21) 2005-1819<br>
+                Cel: (21) 99999-8888<br>
                 E-mail: contato@studioarquitetura.com.br</p>
             </div>
             <div class="mapa-site">
