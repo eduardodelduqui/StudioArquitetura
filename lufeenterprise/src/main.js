@@ -21,7 +21,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
-Vue.http.options.root = 'http://localhost:3000';
+Vue.http.options.root = 'https://api-studioarquitetura.herokuapp.com';
 
 Vue.config.productionTip = false
 Vue.prototype.$httplogin = http /** Para que não seja mais necessário importar o http em todos views/components que o utilizarem */

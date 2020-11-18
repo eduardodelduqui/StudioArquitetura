@@ -74,9 +74,6 @@ import Footer from '../components/shared/footer/Footer.vue';
         this.sliding = false
       }
     },
-
-    created(){
-    }
   }
 </script>
 
