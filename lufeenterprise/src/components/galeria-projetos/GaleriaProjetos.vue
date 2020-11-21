@@ -1,19 +1,19 @@
 <template>
-    <section class="projetos">
+    <div class="projetos">
         <div class="busca" :class="campoFiltro">
             <label for="inputBusca"></label>
-            <input type="search" class="campo-busca" id="inputBusca" placeholder="Filtrar" @input="filtro = $event.target.value" autocomplete="off">
+            <input type="search" class="campo-busca" id="input-busca" placeholder="Filtrar" @input="filtro = $event.target.value" autocomplete="off">
         </div>
         <div class="filtros" :class="campoFiltro">
-            <FiltroGaleria/>
-
+            <FiltroGaleria @filtered="filterList"/>
         </div>
-        <b-container fluid class="projetos-conteudo">
-            <li v-for="foto in fotosComFiltro">
+        <div class="projetos-conteudo">
+            <li class="card-projeto" v-for="foto in fotosComFiltro" :key="foto.titulo">
                 <!-- Adicionar v-if="foto._id != idNaoListar" para não listar -->
                 <router-link :to ="{name: 'item', params: {id: foto._id}}">
                     <painel :titulo="foto.titulo" :url="foto.url" :descricao="foto.descricao" :id="foto._id">
-                        <div v-if="usuarioLogado">
+                        <!-- <div v-if="usuarioLogado"> -->
+                        <div>
                             <b-button @click="remove(foto)" class="botao botao-excluir icone">
                                 <b-icon icon="trash"></b-icon>
                             </b-button>
@@ -24,12 +24,8 @@
                     </painel>
                 </router-link>  
             </li>
-        </b-container>
-    </section>
-  
-
-
-
+        </div>
+    </div>
 </template>
 
 <script>
@@ -50,7 +46,8 @@ export default {
     data() {
         return {
             fotos:[],
-            filtro: ''
+            filtro: '',
+            filtroCategoria: ''
         }
     },
 
@@ -62,10 +59,13 @@ export default {
 
     computed:{
         fotosComFiltro(){
+            if(this.filtroCategoria) {
+                var exp = new RegExp(this.filtroCategoria.trim(), 'i');
+                return this.fotos.filter(foto => exp.test(foto.tipo))
+            }
             if(this.filtro){
                 var exp = new RegExp(this.filtro.trim(), 'i');
                 return this.fotos.filter(foto => exp.test(foto.titulo))
-
             }else{
                 return this.fotos
             }
@@ -88,8 +88,11 @@ export default {
                 console.log(err);
                 this.mensagem = 'Não foi possível remover a foto';
             });
-        }
+        },
 
+        filterList(value) {
+            this.filtroCategoria = value
+        }
     },
 
 }
@@ -104,7 +107,7 @@ li
 
 .campoFiltro
 {
-    visibility: hidden;
+    display: none;
 }
 
 .filtros ul{
@@ -117,8 +120,6 @@ li
     color: rgba(0, 0, 0, 0.5);
 }
 
-
-
 #botao-ativo{
     background-color: rgba(128, 128, 128, 0.322)
 }
@@ -127,30 +128,18 @@ li
 .projetos
 {
     background-color: transparent;
-}
-
-.projetos-conteudo
-{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
-    gap: 10px;
-}
-.item-1{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .busca, .projetos-conteudo, .filtros
 {
-    width: 90%;
     padding: 10px 0;
-    margin: 0 auto;
 }
 
 .busca
 {
+    width: 90%;
     padding-top: 10px;
     margin: 0 auto;
 }
@@ -162,7 +151,7 @@ li
     background-color: transparent;
     border: 1px solid gray;
     border-radius: 5px;
-    width: 15%;
+    width: 50%;
     left: 50%;
     transform: translateX(-50%);
     transition: 0.5s;
@@ -171,7 +160,7 @@ li
 .campo-busca:focus
 {
     outline: none;
-    width: 50%;
+    width: 90%;
     background-color: rgba(0, 0, 0, 0.158)
 }
 
@@ -186,5 +175,35 @@ input:focus ~ .campo-busca::placeholder
     opacity: 0;
 }
 
+.projetos-conteudo {
+    display: grid;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .projetos-conteudo {
+        grid-template-columns: minmax(auto, 550px);
+    }
+}
+
+@media (min-width: 900px) {
+    .projetos-conteudo {
+        grid-template-columns: repeat(2, minmax(auto, 550px));
+    }
+}
+
+@media (min-width: 1300px) {
+    .projetos-conteudo {
+        grid-template-columns: repeat(3, minmax(auto, 550px));
+    }
+
+    /* .projetos {
+        width: 90%;
+        margin: 0 auto;
+    } */
+
+}
 
 </style>

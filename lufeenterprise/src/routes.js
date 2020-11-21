@@ -8,13 +8,25 @@ import Login from '../src/views/Login.vue';
 import provedor from './provedor';
 
 
+// export const routes = [
+//     {path: '', name: 'home', component: Home, titulo: 'Home', menu: true, meta: {publica: true}},
+//     {path: '/projetos',name: 'projetos', component: Projetos, titulo: 'Projetos', menu: true, meta: {publica: true}},
+//     {path: '/contato',name: 'contato', component: Contato, titulo: 'Contato', menu: true, meta: {publica: true}},
+//     {path: '/equipe',name: 'contato', component: Contato, titulo: 'Equipe', menu: true, meta: {publica: true}},
+//     {path: '/cadastro',name: 'cadastro', component: Cadastro, titulo: 'Cadastro', menu: false},
+//     {path: '/editar/:id', name: 'editar', component: Cadastro, titulo: 'Editar', menu: false},
+//     {path: '/projetos/:id', name: 'item', component: Item, titulo: 'Item', menu: false, meta: {publica: true}},
+//     {path: '/login', name: 'login', component: Login, titulo: 'Login', menu: false, meta: {publica: true}},
+//     {path: '*', component: Home, menu: false, meta: {publica: true}}
+// ];
+
 export const routes = [
     {path: '', name: 'home', component: Home, titulo: 'Home', menu: true, meta: {publica: true}},
     {path: '/projetos',name: 'projetos', component: Projetos, titulo: 'Projetos', menu: true, meta: {publica: true}},
     {path: '/contato',name: 'contato', component: Contato, titulo: 'Contato', menu: true, meta: {publica: true}},
     {path: '/equipe',name: 'contato', component: Contato, titulo: 'Equipe', menu: true, meta: {publica: true}},
-    {path: '/cadastro',name: 'cadastro', component: Cadastro, titulo: 'Cadastro', menu: false},
-    {path: '/editar/:id', name: 'editar', component: Cadastro, titulo: 'Editar', menu: false},
+    {path: '/cadastro',name: 'cadastro', component: Cadastro, titulo: 'Cadastro', menu: true},
+    {path: '/editar/:id', name: 'editar', component: Cadastro, titulo: 'Editar', menu: true},
     {path: '/projetos/:id', name: 'item', component: Item, titulo: 'Item', menu: false, meta: {publica: true}},
     {path: '/login', name: 'login', component: Login, titulo: 'Login', menu: false, meta: {publica: true}},
     {path: '*', component: Home, menu: false, meta: {publica: true}}

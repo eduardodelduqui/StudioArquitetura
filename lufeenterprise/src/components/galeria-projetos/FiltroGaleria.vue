@@ -52,13 +52,13 @@
         </b-list-group> -->
         <div>
             <b-list-group horizontal="lg">
-                <b-list-group-item id="filtro-item" button data-toggle="list" active>TODOS</b-list-group-item>
-                <b-list-group-item id="filtro-item" button data-toggle="list">COMERCIAL</b-list-group-item>
-                <b-list-group-item id="filtro-item" button data-toggle="list">EM ANDAMENTO</b-list-group-item>
-                <b-list-group-item id="filtro-item" button data-toggle="list">INSTITUCIONAL</b-list-group-item>
-                <b-list-group-item id="filtro-item" button data-toggle="list">MULTIFAMILIAR</b-list-group-item>
-                <b-list-group-item id="filtro-item" button data-toggle="list">UNIFAMILIAR</b-list-group-item>
-                <b-list-group-item id="filtro-item" button data-toggle="list">URBANISMO</b-list-group-item>
+                <b-list-group-item id="filtro-item" button data-toggle="list" active @click="changeFilter('')">TODOS</b-list-group-item>
+                <b-list-group-item id="filtro-item" button data-toggle="list" @click="changeFilter('comercial')">COMERCIAL</b-list-group-item>
+                <b-list-group-item id="filtro-item" button data-toggle="list" @click="changeFilter('em andamento')">EM ANDAMENTO</b-list-group-item>
+                <b-list-group-item id="filtro-item" button data-toggle="list" @click="changeFilter('institucional')">INSTITUCIONAL</b-list-group-item>
+                <b-list-group-item id="filtro-item" button data-toggle="list" @click="changeFilter('multifamiliar')">MULTIFAMILIAR</b-list-group-item>
+                <b-list-group-item id="filtro-item" button data-toggle="list" @click="changeFilter('unifamiliar')">UNIFAMILIAR</b-list-group-item>
+                <b-list-group-item id="filtro-item" button data-toggle="list" @click="changeFilter('urbanismo')">URBANISMO</b-list-group-item>
             </b-list-group>
         </div>
 </template>
@@ -66,7 +66,28 @@
 <script>
 export default {
 
+    data() {
+        return {
+            filtro: ''
+        }
+    },
+
+    methods: {
+        changeFilter(value) {
+            this.filtro = value
+        }
+    },
+
+     watch: {
+         filtro(newValue, oldValue) {
+             this.$emit('filtered', newValue)
+         }
+     },
+
+    
 }
+
+
 </script>
 
 <style scoped>

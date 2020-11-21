@@ -49,8 +49,6 @@ html, body
   color: #2c3e50;
 }
 
-
-
 .pagina-enter, .pagina-leave-to{
     opacity: 0%;
 }
@@ -63,5 +61,8 @@ li{
   list-style: none;
 }
 
+button:focus {
+  outline: none;
+}
 
 </style>

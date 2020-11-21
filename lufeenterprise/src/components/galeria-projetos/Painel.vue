@@ -1,16 +1,16 @@
 <template>
     <div @mouseover="cardVisivel(true)" @mouseout="cardVisivel(false)" class="item">
-        <div class="card bg-dark text-white card-img" :style="imagemBackground">
-            <!-- <b-img :src="url" class="card-img" :alt="titulo"></b-img> -->
+        <div class="card bg-dark text-white card-img">
+            <b-img :src="url" class="card-img" :alt="titulo"></b-img>
             <div v-show="visivel" class="card-img-overlay card-imagem">
-                    <h5 class="card-title">{{titulo}}</h5>
-                    <p class="card-text">{{descricao}}</p>
-                    <b-button @click="mudaIcone(icone)"    size="sm" class="botao botao-like">
-                        <b-icon :icon="iconeHeart" aria-hidden="true" class="bg-transparent text-red icone"></b-icon>
-                    </b-button>
-                    <slot>
-                    <!-- Botões adicionais -->
-                    </slot>
+                <h5 class="card-title">{{titulo}}</h5>
+                <p class="card-text">{{descricao}}</p>
+                <!-- <b-button @click="mudaIcone(icone)"    size="sm" class="botao botao-like">
+                    <b-icon :icon="iconeHeart" aria-hidden="true" class="bg-transparent text-red icone"></b-icon>
+                </b-button> -->
+                <!-- <slot>
+                Botões adicionais
+                </slot> -->
             </div>
         </div>
     </div>
@@ -37,7 +37,6 @@ export default {
         this.service = new FotoService(this.$resource);
     },
 
-   
     computed:{
         
         iconeHeart(){
@@ -48,9 +47,6 @@ export default {
                 return "heart"
             }
         },
-         imagemBackground(){
-            return `background-image: url(${this.url}); background-size: cover; min-height: 400px; max-height: 100%; background-position: center center; background-repeat: no-repeat`
-        }
     },
 
     methods: {
@@ -61,11 +57,8 @@ export default {
                 this.$el.querySelector('.icone').style.color = 'white'
             }
             if(!icone){
-                // this.$el.querySelector('.icone').style.color = red;
                 this.$el.querySelector('.icone').style.transition = '0.5s'
                 this.$el.querySelector('.icone').style.color = 'red'
-
-                
                 this.icone = true
             }
         },
@@ -79,10 +72,8 @@ export default {
             if(!visivel){
                 let elemento = this.$el.querySelector('.card-img-overlay');
                 elemento.style.transition = '1s'
-   
                 this.visivel = visivel;
 
-                this.visivel = visivel;
             }
         },
 
@@ -105,18 +96,32 @@ export default {
 
 <style scoped>
 
-.card-imagem
-{
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.432);
-    cursor: pointer;
-    opacity: 0
+.item {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
-.card-img
-{
-    border: 1px solid black;
+.card {
+    max-width: 100%;
+    max-height: 100%;
+}
 
+.card-img {
+    object-fit: cover;
+    height: 250px;
+    border-radius: 0px;
+    border: 0px;
+}
+
+.card-imagem
+{
+    background-color: rgba(0, 0, 0, 0.432);
+    cursor: pointer;
+    opacity: 0;
+    border: none;
 }
 
 .botao
@@ -155,7 +160,5 @@ export default {
     right: 40px;
     top: 10px;
 }
-
-
 
 </style>

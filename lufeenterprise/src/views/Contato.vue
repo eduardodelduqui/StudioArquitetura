@@ -4,52 +4,7 @@
             <p>Obrigado, {{nomeMensagem}} :)</p>
             <p>Seu contato foi enviado com sucesso</p>
         </div>
-        <div class="box container">
-            <div class="contato">
-                <h1>CONTATO</h1>
-                <b-form @submit.prevent="enviaFormulario()" class="formulario" action="" autocomplete="off">
-                        <div class="inputBox">
-                            <input @input="form.nome = $event.target.value; nomeMensagem = $event.target.value" type="text" id="inputNome" name="nome" autocomplete="off" required="true">     
-                            <label for="inputNome">Nome:</label>
-                        </div>
-                        <div class="inputBox">
-                            <input @input="form.email = $event.target.value" type="text" id="inputEmail" name="email" required="true" autocomplete="off">
-                            <label for="inputEmail">E-mail:</label>
-                        </div>
-                        <b-form-group>
-                            <b-form-select
-                            v-model="form.solicitacao"
-                            :options="solicitacoes" required="true">
-                            </b-form-select>
-                        </b-form-group>
-                        
-                        <button type="submit" class="btn btn-primary botao">Enviar</button>
-                </b-form>
-            </div>
-        </div>
-        <div class="info-box container">
-                <h4>Deixe seu nome e e-mail!<br>
-                Teremos o prazer de entrar em contato :)</h4>
-                <div class="info-texto">
-                    <p>Rua Nomequalquer de Rua, 3185, Trindade<br>
-                    Rio de Janeiro - RJ<br>
-                    Tel: (21) 2005-1819<br>
-                    Cel: (21) 99999-8888<br>
-                    <spam class="email">E-mail: contato@studioarquitetura.com.br</spam></p>
-                </div>
-                <div class="redes-sociais">
-                    <ul class="redes-sociais-lista">
-                        <li><a href="#" class="fa fa-facebook"></a></li>
-                        <li><a href="#" class="fa fa-twitter"></a></li>
-                        <li><a href="#" class="fa fa-youtube"></a></li>
-                        <li><a href="#" class="fa fa-instagram"></a></li>
-                    </ul>
-                </div>   
-        </div>
-
-
     </div>
-    
 </template>
 
 <script>
@@ -78,11 +33,7 @@ export default {
             this.form.nome = "",
             this.form.email = "",
             this.form.solicitacao = null
-            console.log(this.form);
-            
-
-
-            
+            console.log(this.form);        
         }
     },
 

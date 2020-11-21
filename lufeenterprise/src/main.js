@@ -17,8 +17,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-// import 'bootstrap/dist/css/bootstrap.css';
-
 Vue.use(VueRouter);
 Vue.use(VueResource);
 Vue.http.options.root = 'https://api-studioarquitetura.herokuapp.com';
@@ -28,15 +26,18 @@ Vue.prototype.$httplogin = http /** Para que não seja mais necessário importar
 
 const router = new VueRouter({
   routes: routes,
-  mode: 'history'
+  mode: 'history',
+  scrollBehavior (to, from, savedPosition) {
+    return {x: 0, y: 0}
+  }
 })
 
-router.beforeEach((routeTo, routeFrom, next) => {
-  if(!routeTo.meta.publica && !provedor.state.token){
-      return next({path: '/login'})
-  }
-  next()
-})
+// router.beforeEach((routeTo, routeFrom, next) => {
+//   if(!routeTo.meta.publica && !provedor.state.token){
+//       return next({path: '/login'})
+//   }
+//   next()
+// })
 
 new Vue({
   el: '#app',

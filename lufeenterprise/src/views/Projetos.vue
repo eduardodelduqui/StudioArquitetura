@@ -2,7 +2,7 @@
   <div>
     <div class="body">
         <h1 id="titulo">PROJETOS</h1>
-        <section>
+        <section id="section-galeria">
           <galeria-de-projetos class="galeria"></galeria-de-projetos>
         </section>
         
@@ -61,26 +61,7 @@ export default {
   min-height: 100vh;
 }
 
-.texto-banner
-{
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.50);
-    padding: 20px;
-    border-radius: 20px;
-}
 
-.divisor-pagina
-{
-  display: block;
-  height: 20px;
-  border-bottom: solid 20px rgb(24, 24, 24);
-  border-top: solid 20px rgb(24, 24, 24);
-  transition: all 0.0001s both;
-  margin: 30px 0;
-}
 
 h1
 {
@@ -102,6 +83,10 @@ li
 {
     width: 90%;
     margin: 0 auto;
+}
+
+#section-galeria {
+  padding: 0px 10px;
 }
 
 

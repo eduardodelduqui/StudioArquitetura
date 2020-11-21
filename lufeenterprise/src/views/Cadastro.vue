@@ -13,6 +13,9 @@
             </div>
             <b-img :src="foto.url" fluid></b-img>
             <div class="controle">
+                <input v-model.lazy="foto.tipo" id="inputTipo" type="text" name="url" autocomplete="off">
+            </div>
+            <div class="controle">
                 <textarea v-model="foto.descricao" id="areaDescricao" name="descricao" cols="30" rows="10" placeholder="Descrição"  autocomplete="off"></textarea>
             </div>  
             <div class="botoes">

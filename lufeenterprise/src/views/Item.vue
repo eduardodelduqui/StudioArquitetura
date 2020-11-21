@@ -6,7 +6,7 @@
                     <b-col lg class="coluna">
                         <div class="conteudo-texto">
                                 <h1>{{foto.titulo}}</h1>
-                                <p>Tipo: N/D<br>
+                                <p>Tipo: {{foto.tipo}}<br>
                                 Escritório: StudioArquitetura<br>
                                 Nome do projeto: {{foto.titulo}}<br>
                                 Data do inicio do projeto: N/D<br>
@@ -16,7 +16,7 @@
                         </div>
                     </b-col>
                     <b-col lg class="coluna">
-                            <div class="conteudo-foto container">
+                            <div class="conteudo-foto">
                                 <b-img thumbnail="" :src="foto.url"></b-img>
                             </div>
                     </b-col>
@@ -28,9 +28,7 @@
             <Footer/>
        </div>
    </div>
-
 </template>
-
 <script>
 
 import Foto from '../directives/domain/foto/Foto.js';
@@ -86,16 +84,12 @@ export default {
 
 .linha{
     width: 100%;
+    margin: 0;
 }
 
-.conteudo
-{
-    position: relative;
-    display: block;
-    top: 56px;
-}
 .conteudo-item
 {
+    padding: 20px 0;
     background-color: rgb(235, 233, 233);
 }
 
@@ -105,9 +99,17 @@ h1
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.coluna {
+    width: 100%;
+}
+
 .conteudo-texto
 {
-    padding: 5% 10%;
+    padding: 20px;
+}
+
+.galeria {
+    padding: 10px;
 }
 
 

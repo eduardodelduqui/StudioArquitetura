@@ -29,11 +29,8 @@ export default {
 
      methods: {
         efetuarLogin() {
-
             this.$store.dispatch('efetuarLogin', this.usuario)
-                .then(()=> this.$router.push({name: 'home'}))
-
-            
+                .then(()=> this.$router.push({name: 'home'}))  
         }
     },
 
