@@ -32,10 +32,10 @@ export default {
 
 footer
 {
-    background: url(https://media04.lokalkompass.de/article/2018/09/07/0/100380_XXL.jpg);
+    background: url(https://www.matuetevillas.com/wp-content/uploads/2019/08/Ambientes_aluguel-de-casas-de-luxo_Villa07-na-Praia_da_Baleia-RJ-1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: middle center;
+    background-position: right center;
     color: white;
     font-size: 14px;
 }

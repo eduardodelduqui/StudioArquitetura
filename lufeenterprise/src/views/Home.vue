@@ -51,7 +51,9 @@
           <galeria-de-projetos campoFiltro="campoFiltro"></galeria-de-projetos>
         </div>
     	</section>
-    	<rodape></rodape>
+      <footer>
+    	  <rodape></rodape>
+      </footer>
   </div>
 </template>
 
@@ -124,6 +126,8 @@ import Footer from '../components/shared/footer/Footer.vue';
 #section-galeria
 {
   background-color: rgba(235, 235, 235, 0.5);
+  padding-top: 10px;
+  padding-bottom: 120px;
 }
 
 .section-container {
@@ -165,19 +169,6 @@ import Footer from '../components/shared/footer/Footer.vue';
     padding:20px 0px;
   }
 }
-
-/* @media (min-width: 900px) {
-	#section-galeria .section-container {
-		width: 900px;
-		padding: 10px;
-	}
-} */
-
-/* @media (min-width: 1300px) {
-	#section-galeria .section-container {
-		width: 1300px;
-	}
-} */
 
 @media (max-width: 600px) {
   .escritorio-texto {

@@ -1,9 +1,72 @@
 <template>
     <div class="body">
-        <div class="box-mensagem">
-            <p>Obrigado, {{nomeMensagem}} :)</p>
-            <p>Seu contato foi enviado com sucesso</p>
-        </div>
+        <b-row class="box-contact-us" no-gutters>
+            <b-col md="6" class="info">
+                <h3>Se liga na gente!</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum magnam similique rerum voluptate facilis repudiandae iusto asperiores quae deleniti voluptatem!</p>
+                <div class="contact-us-info">
+                    <p>Rua Nomequalquer de Rua, 3185, Trindade</p>
+                    <p>Rio de Janeiro - RJ</p>
+                    <p>Email: contato@studioarquitetura.com.br</p>
+                    <p>Cel: (21) 99999-8888</p>
+                </div>
+                <div class="social-media">
+                    <h4>Conecte-se com a gente:</h4>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </b-col>
+            <b-col md="6" class="form">
+                <h3>Entre em contato</h3>
+                <b-form @submit="enviaFormulario()">
+                    <b-form-group
+                        label="Nome"
+                        label-for="input-nome"
+                    >
+                        <b-form-input
+                            id="input-nome"
+                            v-model="form.nome"
+                            required
+                        ></b-form-input>
+                    </b-form-group>
+                    <b-form-group
+                        label="E-mail"
+                        label-for="input-email"
+                    >
+                        <b-form-input
+                            id="input-email"
+                            v-model="form.nome"
+                            required
+                        ></b-form-input>
+                    </b-form-group>
+                    <b-form-group
+                        label="Orçamento"
+                        label-for="input-solicitacao"
+                    >
+                        <b-form-select
+                            id="input-solicitacao"
+                            v-model="form.solicitacao"
+                            :options="solicitacoes"
+                            required
+                        ></b-form-select>
+                    </b-form-group>
+                    <b-form-group
+                        label="Deixe uma mensagem"
+                        label-for="input-mensagem"
+                    >
+                        <b-form-textarea
+                            id="input-mensagem"
+                            v-model="form.mensagem"
+                            no-resize
+                            required
+                            rows="4"
+                        ></b-form-textarea>
+                    </b-form-group>
+                    <b-button type="submit">Enviar</b-button>
+                </b-form>
+            </b-col>
+        </b-row>
     </div>
 </template>
 
@@ -15,8 +78,8 @@ export default {
             form: {
                 nome: "",
                 email: "",
-                solicitacao: null
-
+                solicitacao: null,
+                mensagem: ""
             },
             solicitacoes: [{ text: 'Selecione para orçamento', value: 'null'}, 'Interiores', 'Exteriores', 'Reforma'],
             nomeMensagem: ""
@@ -35,140 +98,79 @@ export default {
             this.form.solicitacao = null
             console.log(this.form);        
         }
-    },
-
-   
-    
+    }, 
 }
 </script>
-
-
-
 <style scoped>
 
 .body
 {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background: url(https://media04.lokalkompass.de/article/2018/09/07/0/100380_XXL.jpg);
-    background-repeat: no-repeat;
-}
-
-.navbar-bg
-{
-    background-color: rgb(0, 0, 0);
-}
-
-.atual{
-    color: #ffefb9;
-}
-
-
-main
-{
     height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px;
+    background: url(https://www.matuetevillas.com/wp-content/uploads/2019/08/Ambientes_aluguel-de-casas-de-luxo_Villa07-na-Praia_da_Baleia-RJ-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.box-mensagem
-{
-    text-align: center;
-    vertical-align: center;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    background-color: #ffefb9;
-    width: 20%;
-    padding: 10px 0;
-    box-sizing: border-box;
-    border-radius: 10px;
-    visibility: hidden;
-}
-.box-mensagem p{
-    margin: 0px;
-    padding: 0px;
-    font-size: 19px;
-    font-weight: bold;
-}
 .visivel{
     visibility: visible;
     animation: 1s slide-in-top both, 3s visibilidade 5s both;
-
 }
 
-h1
-{
-    padding-top: 20px;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    font-family: 'Montserrat', sans-serif;
+.box-contact-us {
+    max-width: 800px;
+    background-color: rgb(235, 233, 233);
+    border-radius: 10px;
+    box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    margin: 0 auto;
 }
 
-h4
-{
-    position: absolute;
-    top: 10%;
-}
-
-.contato
-{
-    padding-left: 100px;
-}
-
-.box
-{
-    position: absolute;
-    display: grid;
-    top: 50%;
-    left: 50%;
-    width: 30%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.616);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
-    border-radius: 15px;
-    animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-.formulario{
-    padding: 50px;
-}
-.box .inputBox
-{
-    position: relative;
+.info {
     width: 100%;
+    height: 100%;
+    padding: 20px;
 }
-.box .inputBox input
-{
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    margin-bottom: 30px;
-    border: none;
-    background-color: transparent;
-    border-bottom: 1px solid rgb(255, 255, 255);  
+
+.info h3, .info h4{
+    color: #1a96bc;
+}
+
+.social-media {
+    margin-top: 30px;
+}
+
+.info h4 {
+    font-size: 18px;
+}
+
+.form {
+    padding: 20px;
+    background-color: #1a96bc;
+    height: 100%;
     color: white;
 }
 
-.box .inputBox label
-{
-    position: absolute;
-    top: 0;
-    padding: 10px 0;
-    font-size: 18px;
-    color: rgb(255, 255, 255);
-    display: block;
-    pointer-events: none;
-    transition: .5s;
+.form button {
+    background-color: white;
+    color: #1a96bc;
+    border: none;
 }
 
-.box .inputBox input:focus ~ label, .box .inputBox input:valid ~ label
-{
-    top: -24px;
-    color: #007bff;
-    font-size: 16px;
+.contact-us-info {
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+h3 {
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 0px;
 }
 
 input:hover, input:focus
@@ -181,142 +183,31 @@ button
     cursor: pointer;
 }
 
-.info-box{
-    padding: 40px;
-    position: absolute;
-    top: 50%;
-    left: 30%;
-    background: linear-gradient(110deg, #ffefb9 60%, #fdcd3b 60%);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
-    border-radius: 15px;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    height: 50%;
+.social-media a{
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #1a96bc, #149279);
+    color: white;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 0.5rem;
 }
 
-.info{
-    position: relative;
+.social-media a:hover{
+    transform: scale(1.1);
+    text-decoration: none;
 }
 
+@media (max-width: 768px) {
 
-
-.info-texto{
-    position: absolute;
-    bottom: 10%;
-    left: 0;
-    width: 400px;
-    padding: 40px;
-    font-size: 14px;
-}
-
-.redes-sociais{
-    position: absolute;
-    bottom: 0%;
-    right: 0%;
-    width: 100%;
-    align-self: left;
-}
-
-.redes-sociais ul
-{
-    list-style: none;
-
-}
-.redes-sociais li{
-    width: 30px;
-}
-
-.redes-sociais a{
-    font-size: 20px;
-    padding: 0px;
-    background: transparent;
-    color: #007bff;
-}
-
-.email{
-    font-weight: bold;
-}
-
-
-
-
-@keyframes slide-in-left {
-    0% {
-        left: 35%;
-      
-    }
-    100% {
-        left: 50%;
-    
-    }
-}
-
-@keyframes slide-in-top{
-    0%{
-        top: -20%;
-    }
-    100%{
-        top: 9%;
-    }
-}
-
-@keyframes visibilidade{
-    0%{
-        opacity: 100%;
-    }
-    100%{
-        opacity: 0%;
-        visibility: hidden;
+    .body {
+        height: 100%;
+        padding: 20px;
     }
 
-}
-
-
-@media(max-width: 1300px){
-    .info-box{
-        /* transform: translate(0%, 0%); */
-        top: 50%;
-        left: 50%;
-        width: 90%;
-        height: 90%
-    }
-
-    .box{
-        display: block;
-        padding: 0px;
-        top: 45%;
-        left: 50%;
-        width: 95%;
-        height: 40%;
-        z-index: 1;
-    }
-    .contato{
-        padding: 0px;
-        position: relative;
-    }
-
-    h1
-    {
-        font-size: 20px;
-    }
-
-    h4
-    {
-        top: 5%;
-        font-size: 18px;
-        padding: 10px 0;
-    }
-
-    .formulario
-    {
-        padding: 0px 10%;
-    }
-
-    .info-texto{
-        bottom: 0;
-        padding: 40px 20px;
-        width: 100%;
+    .social-media, .contact-us-info {
+        margin-top: 10px;
     }
 }
 
