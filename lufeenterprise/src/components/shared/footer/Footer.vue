@@ -9,14 +9,6 @@
                 Cel: (21) 99999-8888<br>
                 E-mail: contato@studioarquitetura.com.br</p>
             </div>
-            <!-- <div class="redes-sociais">
-                <ul class="redes-sociais-lista">
-                    <li><a href="#" class="fa fa-facebook"></a></li>
-                    <li><a href="#" class="fa fa-twitter"></a></li>
-                    <li><a href="#" class="fa fa-youtube"></a></li>
-                    <li><a href="#" class="fa fa-instagram"></a></li>
-                </ul>
-            </div> -->
         </div>
     </footer>
   
@@ -32,7 +24,7 @@ export default {
 
 footer
 {
-    background: url(https://www.matuetevillas.com/wp-content/uploads/2019/08/Ambientes_aluguel-de-casas-de-luxo_Villa07-na-Praia_da_Baleia-RJ-1.jpg);
+    background: url("../../../../src/assets/footer-image.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right center;

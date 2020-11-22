@@ -110,6 +110,8 @@ h1
 
 .galeria {
     padding: 10px;
+    padding-bottom: 120px;
+
 }
 
 

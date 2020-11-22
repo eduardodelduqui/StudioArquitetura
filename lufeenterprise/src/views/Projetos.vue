@@ -1,16 +1,13 @@
 <template>
-  <div>
-    <div class="body">
-        <h1 id="titulo">PROJETOS</h1>
-        <section id="section-galeria">
-          <galeria-de-projetos class="galeria"></galeria-de-projetos>
-        </section>
-        
-    </div>
-    <rodape></rodape>
-  </div>
-
-    
+	<div>
+		<div class="body">
+			<h1 id="titulo">PROJETOS</h1>
+			<section id="section-galeria">
+				<galeria-de-projetos class="galeria"></galeria-de-projetos>
+			</section>
+		</div>
+		<rodape></rodape>
+	</div>
 </template>
 
 <script>
@@ -26,20 +23,6 @@ export default {
     'imagem-responsiva': ImagemResponsiva,
     'rodape': Footer
   },
-
-  data(){
-    return {}
-  
-  },
-
-  created(){
-
-  },
-  
-  methods:{
-
-
-  }  
 }
 
 </script>
@@ -48,35 +31,37 @@ export default {
 
 #titulo
 {
-  padding: 0px;
-  text-align: center;
-  margin: 0 auto;
-  font-family: 'Montserrat', sans-serif;
+	padding: 0px;
+	text-align: center;
+	margin-top: 40px;
+	font-family: 'Montserrat', sans-serif;
 }
+
+.section-panel {
+	background-color: rgba(235, 233, 233);
+}
+
 
 .body
 {
-  padding-top: 5%;
-  background-color: white;
-  min-height: 100vh;
+	background-color: white;
+	min-height: 100vh;
 }
-
-
 
 h1
 {
-  font-size: 2.5em;
-  padding: 0 5px 0 0;
+	font-size: 2.5em;
+	padding: 0 5px 0 0;
 }
 
 h2
 {
-  padding: 5px 0 0 0;
+	padding: 5px 0 0 0;
 }
 
 li
 {
-  list-style: none;
+	list-style: none;
 }
 
 .corpo
@@ -86,10 +71,9 @@ li
 }
 
 #section-galeria {
-  padding: 0px 10px;
+	padding: 0px 10px;
+	padding-bottom: 120px;
+	max-width: 1300px;
+	margin: 0 auto;
 }
-
-
-
-
 </style>

@@ -108,8 +108,8 @@ export default {
     height: 100vh;
     width: 100%;
     margin: 0 auto;
-    padding: 50px;
-    background: url(https://www.matuetevillas.com/wp-content/uploads/2019/08/Ambientes_aluguel-de-casas-de-luxo_Villa07-na-Praia_da_Baleia-RJ-1.jpg);
+    padding: 80px;
+    background: url('/src/assets/footer-image.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
