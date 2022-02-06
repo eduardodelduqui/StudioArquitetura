@@ -4,9 +4,6 @@
         <form @submit.prevent="grava()" class="form-cadastro container">
             <div class="controle">
                 <input v-model.lazy="foto.titulo" id="inputTitulo" type="text" name="titulo" placeholder="Título (Obrigatório)" autocomplete="off">
-                    <!-- V-Model (bind two-ways) é uma simplificação de:
-                    @input="foto.titulo = $event.target.value"
-                    :value="foto.titulo" -->
             </div>
             <div class="controle">
                 <input v-model.lazy="foto.url" id="inputURL" type="text" name="url" placeholder="URL (Obrigatório)"  autocomplete="off">

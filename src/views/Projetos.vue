@@ -13,14 +13,12 @@
 <script>
 
 import GaleriaProjetos from '../components/galeria-projetos/GaleriaProjetos.vue'
-import ImagemResponsiva from '../components/shared/imagem-responsiva/ImagemResponsiva.vue'
 import Footer from '../components/shared/footer/Footer.vue'
 
 export default {
 
   components:{
     'galeria-de-projetos': GaleriaProjetos,
-    'imagem-responsiva': ImagemResponsiva,
     'rodape': Footer
   },
 }

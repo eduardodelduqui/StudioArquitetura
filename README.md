@@ -1,11 +1,22 @@
 # StudioArquitetura
 
-> A Vue.js project
+This was my very first Vue.js project, developed in 2020 just to understand the basic concepts of the framework. 
 
----
+### Links
 
-Projeto em criação utilizando VueJS com o propósito estritamente educacional. Todos os recursos presentes foram criados de modo a obter conhecimento e experiência em HTML, CSS, Javascript, padrão REST e framework VueJS.
+- Live Site URL: [StudioArquitetura](https://studioarquitetura.netlify.app)
 
-StudioArquitetura é um site fictício de um estúdio de arquitetura e pode ser acessado no link abaixo:
+### Built with
 
-> **Link para o acesso** https://studioarquitetura.netlify.app
+- HTML5
+- CSS
+- [Vue.js](https://vuejs.org/) - JS framework
+- [Vue Router](https://router.vuejs.org/) - Vue library
+- [BootstrapVue](https://bootstrap-vue.org/) - For specific styles
+## Author
+
+- Website - [Eduardo Delduqui](https://eduardodelduqui.netlify.app)
+
+
+
+
